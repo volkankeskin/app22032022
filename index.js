@@ -7,7 +7,11 @@ app.use(bodyParser.json())
 
 app.get('/api/hello', async (req, res) => {
 
-    res.send('Hello World')
+    //const str = JSON.stringify(process.env) 
+    //res.send(str)
+
+    const sqlStr = process.env.MYSQLCONNSTR_myConn
+    res.send('connection string: ' + sqlStr)
 })
 
 app.get('/api/merhaba', (req, res) => {
